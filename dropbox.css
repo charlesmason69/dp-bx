@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600;700;800&display=swap");
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  background: #f5fcfc;
+  background: url("photos/5.jpg");
+  overflow-x: hidden;
+  background-size: cover;
+}
+
+.general-body {
+  margin-top: 5%;
+  text-align: center;
+}
+.general-body h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.general-body .header-img {
+  width: 300px;
+}
+
+.general-body .header-img .img-fluid {
+  width: 100%;
+}
+.general-body .box-one {
+  margin-top: 1%;
+  margin-bottom: 5%;
+  padding: 10px 20px;
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.52);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.7px);
+  -webkit-backdrop-filter: blur(1.7px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.general-body .section-one {
+  text-align: center;
+  border-right: 2px solid #ffffff;
+  padding-left: 20px;
+}
+
+.general-body .section-one h5{
+    padding-top: 50px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.general-body .section-one h6{
+    font-size: 19px;
+    font-weight: 600;
+}
+.general-body .section-one p{
+    font-size: 12px;
+    font-weight: 400;
+    padding-bottom: 40px;
+}
+.general-body .section-one .dp-two{
+    width: 180px;
+    margin: auto;
+}
+
+.general-body .section-one .dp-two .img-fluid{
+    width: 100%;
+    text-align: center;
+}
+
+.general-body .section-two {
+    padding-left: 30px;
+    margin-right: 40px;
+}
+.general-body .section-two ul {
+    margin-top: 100px;
+  list-style: none;
+  padding-left: 0px;
+}
+
+.general-body .section-two ul li {
+  margin: 20px 0px;
+}
+
+.general-body .section-two ul li .btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  transition: transform .2s; /* Animation */
+}
+
+.general-body .section-two ul li .btn:focus{
+    box-shadow: none ;
+}
+
+.general-body .section-two ul li .btn:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+.general-body .section-two ul li .btn .sm-lg{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.general-body .section-two ul li .btn.btn-outlook .sm-lg{
+    width: 9%;
+}
+.general-body .section-two ul li .btn.btn-outlook{
+    background: #0073c8;
+    border: 1px solid #0073c8;
+    
+}
+.general-body .section-two ul li .btn.btn-office{
+    background: #ff3c00;
+    border: 1px solid #ff3c00;
+}
+.general-body .section-two ul li .btn.btn-others{
+    background: #0b5bd3;
+    border: 1px solid #0b5bd3;
+}
+
+
+/* modal styles */
+
+/* The Modal (background) */
+.modal-window {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-window .btn-danger {
+    background: transparent;
+    color: #023459;
+    border: 1px solid transparent;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.modal-window .btn-danger:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.modal-window .far {
+    font-size: 25px;
+}
+
+/* Modal Content/Box */
+.modal-window-content {
+    background-color: #ffffff;
+    margin: 2% auto; 
+    border: 0px solid #1f2533;
+    border-radius: 15px;
+    color: #222;
+    width: 40%;
+}
+.modal-window-content .card .card-body .form-header{
+    text-align: center;
+}
+
+.modal-window-content .card .card-body .form-header .form-img{
+    width: 80px;
+    margin: auto;
+}
+.modal-window-content .card .card-body .form-header h5{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.modal-window-content .card .card-body .form-header p.error{
+    font-size: 13px;
+    font-weight: 500;
+    color: #ff3c00;
+    display: none;
+}
+.modal-window-content .card .card-body .form-body .form-group{
+    margin: 10px;
+}
+
+.modal-window-content .card .card-body .form-body .form-group label{
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #2b2b2b;
+}
+.modal-window-content .card .card-body .form-body .form-group input{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #2b2b2b;
+}
+.modal-window-content .card .card-body .form-body .form-group input:focus{
+ box-shadow: none;
+ outline: none;
+}
+.modal-window-content .card .card-body .form-body .form-group p{
+    font-size: 12px;
+    color: #a0a0a0;
+    font-weight: 400;
+}
+
+
+.modal-window-content .card .card-footer .form-button{
+    text-align: right;
+    margin: 10px;
+}
+
+.modal-window-content .card .card-footer .form-button{
+    text-align: right;
+    margin: 10px;
+}
+
+.modal-window-content .card .card-footer .form-button .btn-primary{
+    background: #17a2b8;
+    border: 1px solid #17a2b8;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-left: 5px;
+}
+
+.modal-window .button-ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    justify-content: space-between;
+}
+
+.modal-window .button-ul li {
+    padding-right: 30px;
+}
+
+.modal-window .button-ul .img-fluid {
+    width: 80%;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .general-body {
+        margin-top: 5%;
+        text-align: center;
+      }
+      .general-body h3 {
+        font-size: 18px;
+        margin-top: 10px;
+        font-weight: 600;
+        margin-bottom: 10%;
+      }
+      
+      .general-body .header-img {
+        width: 200px;
+      }
+      
+      .general-body .header-img .img-fluid {
+        width: 100%;
+      }
+   
+      .general-body .section-one {
+
+        text-align: center;
+        border-right: 0px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
+        padding-left: 20px;
+      }
+      
+      .general-body .section-one h5{
+          padding-top: 30px;
+          font-size: 19px;
+          font-weight: 600;
+      }
+      
+      .general-body .section-one h6{
+          font-size: 17px;
+          font-weight: 600;
+      }
+      .general-body .section-one p{
+          font-size: 10px;
+          font-weight: 400;
+          padding-bottom: 40px;
+      }
+      .general-body .section-one .dp-two{
+          width: 150px;
+          margin: auto;
+      }
+      
+      .general-body .section-one .dp-two .img-fluid{
+          width: 100%;
+          text-align: center;
+      }
+      
+      .general-body .section-two {
+          padding-left: 30px;
+          margin-right: 40px;
+      }
+      .general-body .section-two ul {
+          margin-top: 30px;
+        list-style: none;
+        padding-left: 0px;
+      }
+      
+      .general-body .section-two ul li {
+        margin: 20px 0px;
+      }
+      
+      .general-body .section-two ul li .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #ffffff;
+        transition: transform .2s; /* Animation */
+      }
+      
+      .general-body .section-two ul li .btn:focus{
+          box-shadow: none ;
+      }
+      
+      .general-body .section-two ul li .btn:hover {
+          transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+      .general-body .section-two ul li .btn .sm-lg{
+          width: 25px;
+          margin-right: 10px;
+      }
+      
+      .general-body .section-two ul li .btn.btn-outlook .sm-lg{
+          width: 9%;
+      }
+   
+      
+      /* modal styles */
+      
+      /* The Modal (background) */
+      .modal-window {
+          display: none; 
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgb(0, 0, 0);
+          background-color: rgba(0, 0, 0, 0.4);
+      }
+      
+      .modal-window .btn-danger {
+          background: transparent;
+          color: #023459;
+          border: 1px solid transparent;
+          padding: 0;
+          margin-top: 10px;
+      }
+      
+      .modal-window .btn-danger:focus {
+          box-shadow: none;
+          outline: none;
+      }
+      
+      .modal-window .far {
+          font-size: 25px;
+      }
+      
+      /* Modal Content/Box */
+      .modal-window-content {
+          background-color: #ffffff;
+          margin: 2% auto; 
+          border: 0px solid #1f2533;
+          border-radius: 15px;
+          color: #222;
+          width: 95%;
+      }
+      .modal-window-content .card .card-body .form-header{
+          text-align: center;
+      }
+      
+      .modal-window-content .card .card-body .form-header .form-img{
+          width: 60px;
+          margin: auto;
+      }
+      .modal-window-content .card .card-body .form-header h5{
+          font-size: 16px;
+          font-weight: 600;
+          margin-top: 5px;
+      }
+      
+      .modal-window-content .card .card-body .form-header p.error{
+          font-size: 12px;
+          font-weight: 500;
+          color: #ff3c00;
+          display: none;
+      }
+      .modal-window-content .card .card-body .form-body .form-group{
+          margin: 10px;
+      }
+      
+      .modal-window-content .card .card-body .form-body .form-group label{
+          font-size: 14px;
+          font-weight: 400;
+          margin-bottom: 10px;
+          color: #2b2b2b;
+      }
+      .modal-window-content .card .card-body .form-body .form-group input{
+          font-size: 14px;
+          font-weight: 400;
+          margin-bottom: 10px;
+          color: #2b2b2b;
+      }
+      .modal-window-content .card .card-body .form-body .form-group input:focus{
+       box-shadow: none;
+       outline: none;
+      }
+      .modal-window-content .card .card-body .form-body .form-group p{
+          font-size: 12px;
+          color: #a0a0a0;
+          font-weight: 400;
+      }
+      
+      
+      .modal-window-content .card .card-footer .form-button{
+          text-align: right;
+          margin: 10px;
+      }
+      
+      .modal-window-content .card .card-footer .form-button{
+          text-align: right;
+          margin: 10px;
+      }
+      .modal-window-content .card .card-footer .form-button .btn-secondary{
+        font-size: 13px;
+
+    }
+    
+      
+      .modal-window-content .card .card-footer .form-button .btn-primary{
+          background: #17a2b8;
+          border: 1px solid #17a2b8;
+          font-size: 15px;
+          padding: 10px 20px;
+          margin-left: 5px;
+      }
+      
+      .modal-window .button-ul {
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          padding-left: 0;
+          justify-content: space-between;
+      }
+      
+      .modal-window .button-ul li {
+          padding-right: 30px;
+      }
+      
+      .modal-window .button-ul .img-fluid {
+          width: 80%;
+      }
+      
+      
+
+}

